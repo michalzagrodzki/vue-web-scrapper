@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Web scrapper"/>
+    <Input msg="Web scrapper"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Input from './components/Input.vue'
+import Output from './components/Output.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Input, Output
   }
 }
 </script>
