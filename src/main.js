@@ -10,9 +10,9 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Input,
+    { path: '/', component: Input, props: true,
       children: [
-        { path: '', component: Output }
+        { path: '', component: Output, props: true }
       ]
     }
   ]
