@@ -7,8 +7,10 @@
 <script>
 export default {
   name: 'Output',
-  props: { 
-    result: String 
+  data () {
+    return {
+      result: 'This is output.'
+    }
   }
 }
 </script>
