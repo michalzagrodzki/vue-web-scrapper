@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Input msg="Web scrapper"/>
+    <router-view></router-view>
   </div>
 </template>
 
