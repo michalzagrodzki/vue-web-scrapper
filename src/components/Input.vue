@@ -7,8 +7,10 @@
 <script>
 export default {
   name: 'Input',
-  props: {
-    msg: String
+  data () {
+    return {
+      msg: 'Web scrapper'
+    }
   }
 }
 </script>
