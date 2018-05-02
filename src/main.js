@@ -18,6 +18,7 @@ const router = new VueRouter({
         ]
       }
     ]},
+    // this route will need separate component, now it redirects but does not render anything
     { path: '*', redirect: { name: 'main' }}
   ]
 })
