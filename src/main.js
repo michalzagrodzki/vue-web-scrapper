@@ -10,11 +10,15 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Input, props: true,
+    { path: '/', name: 'main', component: App, 
       children: [
-        { path: '', component: Output, props: true }
-      ]
-    }
+      { path: '', name: 'input', component: Input, props: true,
+        children: [
+          { path: '', name: 'output', component: Output, props: true }
+        ]
+      }
+    ]},
+    { path: '*', redirect: { name: 'main' }}
   ]
 })
 
