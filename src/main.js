@@ -13,11 +13,11 @@ Vue.use(VueAxios, axios)
 
 const router = new VueRouter({
   routes: [
-    { path: '/', name: 'main', component: App, 
+    { path: '/', component: App, 
       children: [
-      { path: '', name: 'input', component: Input, props: true,
+      { path: '', component: Input, props: true,
         children: [
-          { path: '', name: 'output', component: Output, props: true }
+          { path: '', component: Output, props: true }
         ]
       }
     ]},
