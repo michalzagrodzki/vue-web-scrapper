@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ result }}</h1>
+    <p>{{ result }}</p>
   </div>
 </template>
 
@@ -11,6 +11,14 @@ export default {
   data () {
     return {
       result: 'This is output.'
+    }
+  },
+  methods: {
+    getPage: function () {
+      Vue.axios.get('https://www.google.no')
+      .then((response) => {
+        this.result = response
+      })
     }
   }
 }
