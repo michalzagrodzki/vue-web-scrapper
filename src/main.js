@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import App from './App.vue'
 
 import Input from './components/Input.vue'
@@ -7,6 +9,7 @@ import Output from './components/Output.vue'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(VueAxios, axios)
 
 const router = new VueRouter({
   routes: [
