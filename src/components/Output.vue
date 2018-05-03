@@ -13,9 +13,12 @@ export default {
       result: 'This is output.'
     }
   },
+  created () {
+    this.getPage('www.google.no')
+  },
   methods: {
-    getPage: function () {
-      Vue.axios.get('https://www.google.no')
+    getPage: function (inputPage) {
+      Vue.axios.get(inputPage)
       .then((response) => {
         this.result = response
       })
