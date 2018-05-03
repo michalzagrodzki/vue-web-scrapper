@@ -19,6 +19,10 @@ export default {
       .then((response) => {
         this.result = response
       })
+      .catch((error) => {
+        console.log('oh no, error:')
+        console.log(error)
+      })
     }
   }
 }
