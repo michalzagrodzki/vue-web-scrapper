@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 
 export default {
   name: 'Output',
@@ -14,16 +15,16 @@ export default {
     }
   },
   created () {
-    this.getPage('www.google.no')
+    this.getPage('https://en.wikipedia.org/wiki/List_of_20th-century_writers')
   },
   methods: {
     getPage: function (inputPage) {
       Vue.axios.get(inputPage)
       .then((response) => {
-        this.result = response
+        console.log(response)
       })
       .catch((error) => {
-        console.log('oh no, error:')
+        console.log('error in response:')
         console.log(error)
       })
     }
