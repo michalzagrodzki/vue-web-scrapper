@@ -27,6 +27,8 @@ const router = new VueRouter({
   ]
 })
 
+console.log('client server started')
+
 new Vue({
   router,
   render: h => h(App)
