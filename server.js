@@ -7,6 +7,7 @@ app.use('/', express.static(path.join(__dirname + '/dist')));
 
 app.get('/', (req, res) => {
   res.send(console.log('message from server'));
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(req)
 });
 
