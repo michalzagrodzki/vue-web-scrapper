@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>{{ result }}</p>
+    <button v-on:click="getPage(input)">Get page</button>
   </div>
 </template>
 
@@ -14,9 +15,6 @@ export default {
       result: 'This is output.',
       input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers'
     }
-  },
-  created () {
-    this.getPage('http://localhost:7080')
   },
   methods: {
     getPage: function (inputPage) {
