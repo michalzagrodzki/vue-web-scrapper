@@ -14,6 +14,7 @@ export default {
     return {
       result: 'This is output.',
       input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers'
+      // input: 'https://www.google.no'
     }
   },
   methods: {
