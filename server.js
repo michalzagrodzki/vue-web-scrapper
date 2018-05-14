@@ -2,6 +2,7 @@ const express = require('express');
 const request = require('request')
 const path = require('path');
 const cors = require('cors')
+const history = require('connect-history-api-fallback')
 const Ch = require('cheerio');
 
 const app = express();
@@ -16,7 +17,9 @@ app.use(function(req, res, next){
   next();
 })
 
-app.get('/', cors(), (req, res) => {
+app.use(history())
+
+app.use('/', cors(), (req, res) => {
   console.log(req)
   console.log('message from server');
   console.log(res);

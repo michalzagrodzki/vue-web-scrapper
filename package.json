@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "client": "vue-cli-service serve --open",
-    "server": "nodemon server.js",
+    "server": "DEBUG=express:* nodemon server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
+    "connect-history-api-fallback": "^1.5.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "path": "^0.12.7",
