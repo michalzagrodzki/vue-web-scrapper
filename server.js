@@ -8,14 +8,17 @@ const app = express();
 app.use('/', express.static(path.join(__dirname + '/dist')));
 
 app.use(function(req, res, next){
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Content-Type', 'text/html');
   next();
 })
 
 app.get('/', cors(), (req, res) => {
-  res.send(console.log('message from server'));
+  console.log(req)
+  console.log('message from server');
+  console.log(res);
   res.send(res);
 });
 
