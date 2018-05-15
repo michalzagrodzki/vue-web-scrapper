@@ -47,5 +47,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "nodemonConfig": {
+    "verbose": true
+  }
 }
