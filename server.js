@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 const request = require('request')
 const path = require('path');
 const cors = require('cors')
@@ -9,7 +10,7 @@ const app = express();
 
 app.use('/', express.static(path.join(__dirname + '/dist')));
 
-app.use(function(req, res, next){
+app.use('*', function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -19,12 +20,15 @@ app.use(function(req, res, next){
 
 app.use(history())
 
-app.use('/', cors(), (req, res) => {
-  console.log(req)
-  console.log('message from server');
-  console.log(res);
+/*
+app.get('/', cors(), (req, res, next) => {
   res.send(res);
+  next();
 });
+*/
+app.get('/api', (req, res, next) =>{
+  res.send('answer from api');
+})
 
 console.log('Serving app at 7080')
 app.listen(process.env.PORT || 7080);

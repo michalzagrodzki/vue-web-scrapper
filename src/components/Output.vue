@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ result }}</p>
-    <button v-on:click="getPage(input)">Get page</button>
+    <button v-on:click="getPage(inputLocal)">Get page</button>
   </div>
 </template>
 
@@ -13,7 +13,8 @@ export default {
   data () {
     return {
       result: 'This is output.',
-      input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers'
+      input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers',
+      inputLocal: 'http://localhost:7080/api'
       // input: 'https://www.google.no'
     }
   },
