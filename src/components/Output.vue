@@ -24,6 +24,7 @@ export default {
       .then((response) => {
         console.log('printing response from server')
         console.log(response.data)
+        this.result = response.data
       })
       .catch((error) => {
         console.log('error in response:')
