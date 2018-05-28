@@ -26,9 +26,9 @@ app.get('/', cors(), (req, res, next) => {
   next();
 });
 */
-app.get('/api/:url', (req, res, next) =>{
+app.get('/api', (req, res, next) =>{
   res.send({
-    one: req.params,
+    one: req.query.q,
     two: 'two'
   });
 })
