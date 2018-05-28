@@ -26,8 +26,11 @@ app.get('/', cors(), (req, res, next) => {
   next();
 });
 */
-app.get('/api', (req, res, next) =>{
-  res.send('answer from api');
+app.get('/api/:url', (req, res, next) =>{
+  res.send({
+    one: req.params,
+    two: 'two'
+  });
 })
 
 console.log('Serving app at 7080')
