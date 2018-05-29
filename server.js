@@ -27,9 +27,9 @@ app.get('/', cors(), (req, res, next) => {
 });
 */
 app.get('/api', (req, res, next) =>{
+  const url = req.query.q
   res.send({
-    one: req.query.q,
-    two: 'two'
+    url: url,
   });
 })
 
