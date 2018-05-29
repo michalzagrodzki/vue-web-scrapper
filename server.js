@@ -20,12 +20,6 @@ app.use('/', express.static(path.join(__dirname + '/dist')));
 
 app.use(history())
 
-/*
-app.get('/', cors(), (req, res, next) => {
-  res.send(res);
-  next();
-});
-*/
 app.get('/api', (req, res, next) =>{
   const url = req.query.q
   res.send({
