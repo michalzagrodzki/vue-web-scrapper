@@ -23,7 +23,7 @@ app.use(history())
 app.get('/api', (req, res, next) =>{
   const url = req.query.q
   request(url, function(error, response, body){
-    console.log('there is some error: ' + error)
+    if(error) { console.log('there is some error: ' + error) } 
     console.log('status code: ' + response && response.statusCode)
     res.send(body)
   });
