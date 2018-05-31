@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ result }}</p>
-    <button v-on:click="getPage(input)">Get page</button>
+    <button v-on:click="getPage(inputLocal)">Get page</button>
   </div>
 </template>
 
@@ -14,13 +14,14 @@ export default {
     return {
       result: 'This is output.',
       input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers',
+      inputLocal: '../../example/List of 20th-century writers - Wikipedia.htm'
       inputSimple: 'word'
     }
   },
   methods: {
     getPage: function (input) {
       const api = 'http://localhost:7080/api?q='
-      Vue.axios.get(api + input)
+      Vue.axios.get(input)
       .then((response) => {
         console.log('printing response from server')
         console.log(response.data)
