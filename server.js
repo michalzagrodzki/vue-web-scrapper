@@ -26,9 +26,13 @@ app.get('/api', (req, res, next) =>{
     if (error) { 
       console.log('there is some error: ' + error) 
     } else if (!error && response.statusCode == 200) {
+      let result = []
       let Ch = cheerio.load(html)
       Ch('head').remove()
       Ch('script').remove()
+      /*Ch('div .div-col .columns .column-width').each(function(i, elem){
+        result[i] = Ch(this)
+      })*/
       res.send(Ch.html())
     }
   });
