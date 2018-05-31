@@ -14,7 +14,7 @@ export default {
     return {
       result: 'This is output.',
       input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers',
-      inputLocal: '../../example/List of 20th-century writers - Wikipedia.htm'
+      inputLocal: '../assets/List-of-20th-century-writers-Wikipedia.htm'
     }
   },
   methods: {
