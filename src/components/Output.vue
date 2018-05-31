@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ result }}</p>
-    <button v-on:click="getPage(inputLocal)">Get page</button>
+    <button v-on:click="getPage(input)">Get page</button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   methods: {
     getPage: function (input) {
       const api = 'http://localhost:7080/api?q='
-      Vue.axios.get(input)
+      Vue.axios.get(api + input)
       .then((response) => {
         console.log('printing response from server')
         console.log(response.data)
