@@ -4,7 +4,7 @@ const request = require('request')
 const path = require('path');
 const cors = require('cors')
 const history = require('connect-history-api-fallback')
-const Ch = require('cheerio');
+const cheerio = require('cheerio');
 
 const app = express();
 
@@ -22,11 +22,14 @@ app.use(history())
 
 app.get('/api', (req, res, next) =>{
   const url = req.query.q
-  request(url, function(error, response, body){
+  request(url, function(error, response, html){
     if (error) { 
       console.log('there is some error: ' + error) 
     } else if (!error && response.statusCode == 200) {
-      res.send(body) 
+      let Ch = cheerio.load(html)
+      Ch('head').remove()
+      Ch('script').remove()
+      res.send(Ch.html())
     }
   });
 })
