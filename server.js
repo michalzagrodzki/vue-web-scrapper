@@ -30,10 +30,10 @@ app.get('/api', (req, res, next) =>{
       let Ch = cheerio.load(html)
       Ch('head').remove()
       Ch('script').remove()
-      /*Ch('div .div-col .columns .column-width').each(function(i, elem){
-        result[i] = Ch(this)
-      })*/
-      res.send(Ch.html())
+      Ch('li').each(function(i, elem){
+        result[i] = Ch(this).text()
+      })
+      res.send(result)
     }
   });
 })
