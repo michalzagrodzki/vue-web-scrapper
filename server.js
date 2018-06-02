@@ -30,8 +30,13 @@ app.get('/api', (req, res, next) =>{
       let Ch = cheerio.load(html)
       Ch('head').remove()
       Ch('script').remove()
+      Ch('div #toc').remove()
       Ch('li').each(function(i, elem){
-        result[i] = Ch(this).text()
+        result[i] = {
+          name: Ch(this).has('a').text(),
+          letter: Ch(this).parent().parent().prev().children().attr('id'),
+          link: 'https://en.wikipedia.org' + Ch(this).children('a').attr('href')
+           } 
       })
       res.send(result)
     }
