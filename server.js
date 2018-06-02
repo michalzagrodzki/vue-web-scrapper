@@ -32,11 +32,15 @@ app.get('/api', (req, res, next) =>{
       Ch('script').remove()
       Ch('div #toc').remove()
       Ch('li').each(function(i, elem){
-        if(Ch(this).parent().parent().prev().children().attr('id')) {
+        const name = Ch(this).has('a').text()
+        const letter = Ch(this).parent().parent().prev().children().attr('id')
+        const link = 'https://en.wikipedia.org' + Ch(this).children('a').attr('href')
+        
+        if(letter && letter.length < 4) {
           result[i] = {
-          name: Ch(this).has('a').text(),
-          letter: Ch(this).parent().parent().prev().children().attr('id'),
-          link: 'https://en.wikipedia.org' + Ch(this).children('a').attr('href')
+          name: name,
+          letter: letter,
+          link: link
            } 
         }
         
