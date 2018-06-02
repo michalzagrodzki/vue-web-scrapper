@@ -13,8 +13,7 @@ export default {
   data () {
     return {
       result: 'This is output.',
-      input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers',
-      inputLocal: '../assets/List-of-20th-century-writers-Wikipedia.htm'
+      input: 'https://en.wikipedia.org/wiki/List_of_20th-century_writers'
     }
   },
   methods: {
